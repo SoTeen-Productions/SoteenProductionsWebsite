@@ -19,3 +19,7 @@ Deployment builds the project and publishes it to a gh-pages branch. This branch
 ## Dev environment
 
 ### `npm start`
+
+## Create React app and deploy it on Github Pages guide
+
+https://blog.logrocket.com/deploying-react-apps-github-pages/
