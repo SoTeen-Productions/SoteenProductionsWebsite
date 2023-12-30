@@ -33,3 +33,7 @@ https://blog.logrocket.com/deploying-react-apps-github-pages/
 ## Design
 
 - Figma: https://www.figma.com/file/2VVu6sIYVzbqTy4U6YBg0B/soTeen?node-id=0%3A1&mode=dev
+
+## Setup
+
+git clone the repository and npm install
