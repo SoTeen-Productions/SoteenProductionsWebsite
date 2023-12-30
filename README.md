@@ -29,3 +29,7 @@ https://blog.logrocket.com/deploying-react-apps-github-pages/
 - main is the current live version
 - gh-pages is an sutomatically created branch, deployed on Github Pages with the deploy command
 - acceptance is the branch on which we will be working untill a new version of the site is published from it to main
+
+## Design
+
+- Figma: https://www.figma.com/file/2VVu6sIYVzbqTy4U6YBg0B/soTeen?node-id=0%3A1&mode=dev
