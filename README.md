@@ -23,3 +23,9 @@ Deployment builds the project and publishes it to a gh-pages branch. This branch
 ## Create React app and deploy it on Github Pages guide
 
 https://blog.logrocket.com/deploying-react-apps-github-pages/
+
+## Branches structure
+
+- main is the current live version
+- gh-pages is an sutomatically created branch, deployed on Github Pages with the deploy command
+- acceptance is the branch on which we will be working untill a new version of the site is published from it to main
