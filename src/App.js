@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 
 function App() {
   const arr = [12,324,323,342,222,432,42]
