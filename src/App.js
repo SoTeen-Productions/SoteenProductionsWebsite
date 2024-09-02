@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+
+import "mdb-react-ui-kit/dist/css/mdb.min.css";
+import logo from "./logo.svg";
+import video from "./video.mov";
 import {
   MDBFooter,
   MDBNavbar,
@@ -21,7 +25,7 @@ export default function App() {
   const [showBasic, setShowBasic] = useState(false);
   return (
     <>
-      <MDBNavbar expand="lg" dark bgColor="dark">
+      <MDBNavbar expand="lg" dark bgColor="dark" style={{ marginBottom: 0 }}>
         <MDBContainer fluid>
           <MDBNavbarBrand href="#"></MDBNavbarBrand>
           <MDBNavbarToggler
@@ -36,17 +40,24 @@ export default function App() {
           </MDBNavbarToggler>
           <MDBCollapse open={openNavColorSecond} navbar id="navbarColor02">
             <MDBNavbarNav className="me-auto mb-2 mb-lg-0">
+              <MDBNavbarItem>
+                <img
+                  src={logo}
+                  alt="Logo"
+                  style={{ height: "40px", marginRight: "10px" }}
+                />
+              </MDBNavbarItem>
+
               <MDBNavbarItem className="active">
-                <MDBNavbarLink aria-current="page" href="#">
+                <MDBNavbarLink
+                  aria-current="page"
+                  href="#"
+                  style={{ fontWeight: "bold" }}
+                >
                   LOE
                 </MDBNavbarLink>
               </MDBNavbarItem>
-              <MDBNavbarItem>
-                <MDBNavbarLink href="#">GAME</MDBNavbarLink>
-              </MDBNavbarItem>
-              <MDBNavbarItem>
-                <MDBNavbarLink href="#">NEWS</MDBNavbarLink>
-              </MDBNavbarItem>
+
               <MDBNavbarItem>
                 <MDBNavbarLink href="#">ABOUT US</MDBNavbarLink>
               </MDBNavbarItem>
@@ -54,8 +65,6 @@ export default function App() {
           </MDBCollapse>
         </MDBContainer>
       </MDBNavbar>
-
-      <br />
 
       <header>
         <div
@@ -66,28 +75,29 @@ export default function App() {
             overflow: "hidden",
           }}
         >
-          <iframe
-            title="video"
-            src="https://www.youtube.com/watch?v=MLzUcXShQ9Q"
+          <video
+            autoPlay
+            loop
+            muted
             style={{
               position: "absolute",
               top: "50%",
               left: "50%",
               width: "100%",
               height: "100%",
+              objectFit: "cover",
               transform: "translate(-50%, -50%)",
               zIndex: -1,
-              pointerEvents: "none",
             }}
-            frameBorder="0"
-            allow="autoplay; encrypted-media"
-            allowFullScreen
-          ></iframe>
+          >
+            <source src={video} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
 
           <div
             className="mask"
             style={{
-              backgroundColor: "rgba(0, 0, 0, 0.6)",
+              backgroundColor: "rgba(0, 0, 0, 0.3)",
               position: "absolute",
               top: 0,
               left: 0,
@@ -97,14 +107,14 @@ export default function App() {
           ></div>
 
           <div className="d-flex justify-content-center align-items-center h-100">
-            <div className="text-white">
+            <div className="text-white" style={{ zIndex: 3 }}>
               <h1 className="mb-3">LEAGUE OF ENTREPRENEURS</h1>
               <MDBBtn
                 tag="a"
                 outline
                 size="lg"
                 style={{
-                  backgroundColor: "purple",
+                  backgroundColor: "plum",
                   color: "black",
                   border: 0,
                 }}
@@ -115,11 +125,21 @@ export default function App() {
           </div>
         </div>
       </header>
-
       <MDBFooter
         className="bg-dark text-center text-white"
         style={{ position: "absolute", bottom: 0, width: "100%" }}
       >
+        <div
+          className="text-center p-1"
+          style={{
+            backgroundColor: "rgba(0, 0, 0, 0.2)",
+            marginTop: "20px",
+            fontSize: "30px",
+          }}
+        >
+          FOLLOW US:
+        </div>
+
         <MDBContainer className="p-4 pb-0">
           <section className="mb-4">
             <MDBBtn
@@ -141,7 +161,7 @@ export default function App() {
               href="#!"
               role="button"
             >
-              <MDBIcon fab icon="twitter" />
+              <MDBIcon fab icon="youtube" />
             </MDBBtn>
 
             <MDBBtn
@@ -154,15 +174,6 @@ export default function App() {
             >
               <MDBIcon fab icon="instagram" />
             </MDBBtn>
-
-            <MDBBtn
-              outline
-              color="light"
-              floating
-              className="m-1"
-              href="#!"
-              role="button"
-            ></MDBBtn>
           </section>
         </MDBContainer>
 
