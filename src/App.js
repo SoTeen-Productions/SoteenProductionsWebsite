@@ -2,7 +2,11 @@ import React, { useState } from "react";
 
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import logo from "./logo.svg";
-import video from "./video.mov";
+import image1 from "./image1.jpg";
+import image2 from "./image2.jpg";
+import image3 from "./image3.jpg";
+import image4 from "./image4.jpg";
+import image5 from "./image5.jpg";
 import {
   MDBFooter,
   MDBNavbar,
@@ -15,6 +19,15 @@ import {
   MDBNavbarBrand,
   MDBCollapse,
   MDBBtn,
+  MDBCard,
+  MDBCardImage,
+  MDBCardTitle,
+  MDBCardText,
+  MDBCardBody,
+  MDBRow,
+  MDBCol,
+  MDBCarousel,
+  MDBCarouselItem,
 } from "mdb-react-ui-kit";
 
 export default function App() {
@@ -65,39 +78,37 @@ export default function App() {
           </MDBCollapse>
         </MDBContainer>
       </MDBNavbar>
-
       <header>
         <div
           className="p-5 text-center bg-video"
           style={{
             position: "relative",
-            height: "400px",
+            height: "600px",
             overflow: "hidden",
           }}
         >
-          <video
-            autoPlay
-            loop
-            muted
+          <iframe
+            title="video"
+            src="https://drive.google.com/file/d/1YPnq5rOHaXpqf1gD9bGBwXWGACuN2q9u/preview"
             style={{
               position: "absolute",
               top: "50%",
               left: "50%",
               width: "100%",
               height: "100%",
-              objectFit: "cover",
               transform: "translate(-50%, -50%)",
               zIndex: -1,
+              pointerEvents: "none",
             }}
-          >
-            <source src={video} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+            frameBorder="0"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+          ></iframe>
 
           <div
             className="mask"
             style={{
-              backgroundColor: "rgba(0, 0, 0, 0.3)",
+              backgroundColor: "rgba(0, 0, 0, 0.6)",
               position: "absolute",
               top: 0,
               left: 0,
@@ -125,9 +136,55 @@ export default function App() {
           </div>
         </div>
       </header>
+      <MDBCard
+        style={{ backgroundColor: "plum", borderRadius: 0, marginBottom: 0 }}
+      >
+        <MDBRow className="g-0">
+          <MDBCol md="6">
+            <MDBCardBody>
+              <MDBCardTitle id="cardTitle">WE ARE LOE</MDBCardTitle>
+              <MDBCardText>
+                " League of Entrepreneurs" - Aa place, where every player is
+                able to delve into the entrepreneurial world by choosing their
+                preferred business venture. Whether it's running a software
+                company, managing a restaurant, or owning a cake shop or bakery,
+                every player virtually develops their business idea. Our vision
+                is for every player to not only learn about their chosen
+                industry but also to actively develop the skills and knowledge
+                required for success in their chosen field.{" "}
+              </MDBCardText>
+            </MDBCardBody>
+          </MDBCol>
+          <MDBCol md="4">
+            <MDBCarousel
+              showIndicators
+              style={{ borderStyle: "solid", borderColor: "white" }}
+            >
+              <MDBCarouselItem itemId={2}>
+                <img src={image2} className="d-block w-100" alt="..." />
+              </MDBCarouselItem>
+              <MDBCarouselItem itemId={3}>
+                <img src={image3} className="d-block w-100" alt="..." />
+              </MDBCarouselItem>
+              <MDBCarouselItem itemId={4}>
+                <img src={image4} className="d-block w-100" alt="..." />
+              </MDBCarouselItem>
+              <MDBCarouselItem itemId={5}>
+                <img src={image5} className="d-block w-100" alt="..." />
+              </MDBCarouselItem>
+            </MDBCarousel>
+          </MDBCol>
+        </MDBRow>
+      </MDBCard>
+
       <MDBFooter
         className="bg-dark text-center text-white"
-        style={{ position: "absolute", bottom: 0, width: "100%" }}
+        style={{
+          position: "relative",
+          bottom: 0,
+          width: "100%",
+          marginTop: 0,
+        }}
       >
         <div
           className="text-center p-1"
