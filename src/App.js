@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import logo from "./logo.svg";
-import image1 from "./image1.jpg";
 import image2 from "./image2.jpg";
 import image3 from "./image3.jpg";
 import image4 from "./image4.jpg";
@@ -20,7 +19,6 @@ import {
   MDBCollapse,
   MDBBtn,
   MDBCard,
-  MDBCardImage,
   MDBCardTitle,
   MDBCardText,
   MDBCardBody,
@@ -31,11 +29,8 @@ import {
 } from "mdb-react-ui-kit";
 
 export default function App() {
-  const [openNavColor, setOpenNavColor] = useState(false);
   const [openNavColorSecond, setOpenNavColorSecond] = useState(false);
-  const [openNavColorThird, setOpenNavColorThird] = useState(false);
 
-  const [showBasic, setShowBasic] = useState(false);
   return (
     <>
       <MDBNavbar expand="lg" dark bgColor="dark" style={{ marginBottom: 0 }}>
@@ -72,12 +67,25 @@ export default function App() {
               </MDBNavbarItem>
 
               <MDBNavbarItem>
-                <MDBNavbarLink href="#">ABOUT US</MDBNavbarLink>
+                <MDBNavbarLink
+                  href="#about-section"
+                  className="btn btn-primary"
+                  style={{
+                    padding: "10px 20px",
+                    borderRadius: "5px",
+                    backgroundColor: "transparent",
+                    border: "0px solid",
+                    textDecoration: "none",
+                    boxShadow: "none",
+                  }}
+                >
+                  ABOUT US
+                </MDBNavbarLink>
               </MDBNavbarItem>
             </MDBNavbarNav>
           </MDBCollapse>
         </MDBContainer>
-      </MDBNavbar>
+      </MDBNavbar>{" "}
       <header>
         <div
           className="p-5 text-center bg-video"
@@ -137,23 +145,46 @@ export default function App() {
         </div>
       </header>
       <MDBCard
+        id="about-section"
         style={{ backgroundColor: "plum", borderRadius: 0, marginBottom: 0 }}
       >
         <MDBRow className="g-0">
           <MDBCol md="6">
             <MDBCardBody>
-              <MDBCardTitle id="cardTitle">WE ARE LOE</MDBCardTitle>
-              <MDBCardText>
-                " League of Entrepreneurs" - Aa place, where every player is
-                able to delve into the entrepreneurial world by choosing their
+              <MDBCardTitle
+                id="cardTitle"
+                style={{
+                  fontSize: "2.5rem",
+                  fontWeight: "bold",
+                  color: "#4A148C" /* Rich purple color */,
+                  textAlign: "center",
+                  textTransform: "uppercase",
+                  letterSpacing: "2px",
+                  textShadow: "4px 4px 0px black " /* Subtle text shadow */,
+                }}
+              >
+                WE ARE LOE
+              </MDBCardTitle>
+              <MDBCardText
+                style={{
+                  textAlign: "center",
+                  fontSize: "1.2rem",
+                  color: "#333",
+                  lineHeight: "1.6",
+
+                  margin: "20px 0",
+                }}
+              >
+                "League of Entrepreneurs" - A place where every player is able
+                to delve into the entrepreneurial world by choosing their
                 preferred business venture. Whether it's running a software
                 company, managing a restaurant, or owning a cake shop or bakery,
                 every player virtually develops their business idea. Our vision
                 is for every player to not only learn about their chosen
                 industry but also to actively develop the skills and knowledge
-                required for success in their chosen field.{" "}
+                required for success in their chosen field.
               </MDBCardText>
-            </MDBCardBody>
+            </MDBCardBody>{" "}
           </MDBCol>
           <MDBCol md="4">
             <MDBCarousel
@@ -176,7 +207,6 @@ export default function App() {
           </MDBCol>
         </MDBRow>
       </MDBCard>
-
       <MDBFooter
         className="bg-dark text-center text-white"
         style={{
@@ -204,7 +234,7 @@ export default function App() {
               color="light"
               floating
               className="m-1"
-              href="#!"
+              href="https://www.facebook.com/people/SoTeen-Productions/100092645203329/"
               role="button"
             >
               <MDBIcon fab icon="facebook-f" />
@@ -215,7 +245,7 @@ export default function App() {
               color="light"
               floating
               className="m-1"
-              href="#!"
+              href="https://www.youtube.com/@leagueOfentrepreneurs"
               role="button"
             >
               <MDBIcon fab icon="youtube" />
@@ -226,7 +256,7 @@ export default function App() {
               color="light"
               floating
               className="m-1"
-              href="#!"
+              href="https://www.instagram.com/leagueofentrepreneursbg/"
               role="button"
             >
               <MDBIcon fab icon="instagram" />
