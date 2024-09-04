@@ -44,19 +44,25 @@ export default function App() {
             aria-label="Toggle navigation"
             onClick={() => setOpenNavColorSecond(!openNavColorSecond)}
           >
-            <MDBIcon icon="bars" fas />
+            <MDBNavbarItem>
+              <img
+                src={logo}
+                alt="Logo"
+                style={{ height: "40px", marginRight: "10px" }}
+              />
+            </MDBNavbarItem>
           </MDBNavbarToggler>
           <MDBCollapse open={openNavColorSecond} navbar id="navbarColor02">
             <MDBNavbarNav className="me-auto mb-2 mb-lg-0">
-              <MDBNavbarItem>
+              <MDBNavbarItem className="d-none d-lg-block">
+                {" "}
                 <img
                   src={logo}
                   alt="Logo"
                   style={{ height: "40px", marginRight: "10px" }}
                 />
               </MDBNavbarItem>
-
-              <MDBNavbarItem className="active">
+              <MDBNavbarItem className="mx-auto d-lg-none text-center">
                 <MDBNavbarLink
                   aria-current="page"
                   href="#"
@@ -65,7 +71,16 @@ export default function App() {
                   LOE
                 </MDBNavbarLink>
               </MDBNavbarItem>
-
+              {/* LOE on Larger Screens (Hidden) */}
+              <MDBNavbarItem className="d-none d-lg-block">
+                <MDBNavbarLink
+                  aria-current="page"
+                  href="#"
+                  style={{ fontWeight: "bold" }}
+                >
+                  LOE
+                </MDBNavbarLink>
+              </MDBNavbarItem>{" "}
               <MDBNavbarItem>
                 <MDBNavbarLink
                   href="#about-section"
