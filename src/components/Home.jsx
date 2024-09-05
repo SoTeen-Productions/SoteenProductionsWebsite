@@ -200,11 +200,8 @@ const Home = () => {
             backgroundColor: "rgba(0, 0, 0, 0.2)",
           }}
         >
-          © 2024 Copyright:
-          <a className="text-white" href="https://mdbootstrap.com/">
-            MDBootstrap.com
-          </a>
-        </div>
+          © 2024 soteen productions
+            </div>
       </MDBFooter>
     </>
   );
