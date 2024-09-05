@@ -78,7 +78,7 @@ const Navbar = () => {
             {/* Achievements Link */}
             <MDBNavbarItem className="mx-auto text-center">
               <MDBNavbarLink
-                href="/achievements"
+                href="/#/achievements"
                 className="btn btn-primary"
                 style={{
                   padding: "10px 20px",
