@@ -57,23 +57,6 @@ const Navbar = () => {
               </MDBNavbarLink>
             </MDBNavbarItem>
 
-            <MDBNavbarItem>
-              <MDBNavbarLink
-                href="#about-section"
-                className="btn btn-primary"
-                style={{
-                  padding: "10px 20px",
-                  borderRadius: "5px",
-                  backgroundColor: "transparent",
-                  border: "0px solid",
-                  textDecoration: "none",
-                  boxShadow: "none",
-                  fontSize: "18px",
-                }}
-              >
-                ABOUT US
-              </MDBNavbarLink>
-            </MDBNavbarItem>
 
             {/* Achievements Link */}
             <MDBNavbarItem className="mx-auto text-center">
