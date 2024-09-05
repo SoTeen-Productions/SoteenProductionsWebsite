@@ -6,6 +6,7 @@ import image2 from "./image2.jpg";
 import image3 from "./image3.jpg";
 import image4 from "./image4.jpg";
 import image5 from "./image5.jpg";
+import video from "./video.mp4";
 import {
   MDBFooter,
   MDBNavbar,
@@ -110,23 +111,24 @@ export default function App() {
             overflow: "hidden",
           }}
         >
-          <iframe
-            title="video"
-            src="https://drive.google.com/file/d/1YPnq5rOHaXpqf1gD9bGBwXWGACuN2q9u/preview"
+          <video
+            autoPlay
+            loop
+            muted
             style={{
               position: "absolute",
               top: "50%",
               left: "50%",
               width: "100%",
               height: "100%",
+              objectFit: "cover",
               transform: "translate(-50%, -50%)",
               zIndex: -1,
-              pointerEvents: "none",
             }}
-            frameBorder="0"
-            allow="autoplay; encrypted-media"
-            allowFullScreen
-          ></iframe>
+          >
+            <source src={video} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
 
           <div
             className="mask"
