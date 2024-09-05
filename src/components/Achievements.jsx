@@ -3,6 +3,13 @@ import React from "react";
 import award1 from "../award1.jpg";
 import award2 from "../award2.jpg";
 import award3 from "../award3.jpg";
+import award4 from "../award4.pdf";
+import art1 from "../art1.jpg";
+import art2 from "../art2.jpg";
+import art3 from "../art3.jpg";
+import art4 from "../art4.jpg";
+
+
 import {
   MDBCarousel,
   MDBCarouselItem,
@@ -19,18 +26,15 @@ const Achievements = () => {
 
 const achievements = [
        {
-      title: "Community Impact",
-      description: "Led a community project that improved local education facilities."
-    },
- {
       title: "Публикувана статия на отбора",
       description: "Forbes отличи училищен стартъп на финала на Тийноватор...",
       link: "https://forbesbulgaria.com/2023/05/26/forbes-soteen-teenovator2022-2023/" // Add a link here
     },
 
     {
-      title: "Innovation Award",
-      description: "Received an innovation award for a breakthrough in renewable energy."
+      title: "Награда от Volontime",
+      description: "награда за финалист в национален конкурс за стартъпи",
+      pdf:award4
     },
   ];
   return (
@@ -67,8 +71,7 @@ const achievements = [
           </MDBCarousel>
         </MDBCol>
       </MDBRow>
-
-     <MDBRow className="justify-content-center">
+<MDBRow className="justify-content-center">
         {achievements.map((achievement, index) => (
           <MDBCol md="4" key={index} className="mb-4">
             <MDBCard className="text-center">
@@ -83,12 +86,41 @@ const achievements = [
                       </a>
                     </div>
                   )}
+                  {achievement.pdf && (
+                    <div className="mt-2">
+                      <a href={achievement.pdf} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                        Разгледай
+                      </a>
+                    </div>
+                  )}
                 </MDBCardText>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
         ))}
-      </MDBRow>    </MDBContainer>
+      </MDBRow>
+
+      <MDBRow className="justify-content-center mb-4">
+        <MDBCol md="8">
+          <MDBCarousel showIndicators style={{ borderStyle: "solid", borderColor: "white" }}>
+            <MDBCarouselItem itemId={1}>
+              <img src={art1} className="d-block w-100" alt="Award 1" />
+            </MDBCarouselItem>
+            <MDBCarouselItem itemId={2}>
+              <img src={art2} className="d-block w-100" alt="Award 2" />
+            </MDBCarouselItem>
+            <MDBCarouselItem itemId={3}>
+              <img src={art3} className="d-block w-100" alt="Award 3" />
+            </MDBCarouselItem>
+           <MDBCarouselItem itemId={4}>
+              <img src={art4} className="d-block w-100" alt="Award 3" />
+            </MDBCarouselItem>
+
+          </MDBCarousel>
+        </MDBCol>
+      </MDBRow>
+
+    </MDBContainer>
   );
 };
 
